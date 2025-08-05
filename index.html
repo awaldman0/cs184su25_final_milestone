@@ -41,13 +41,27 @@
 	-->
 
 			<h2>Summary/Preliminary Results</h2>
-				<p></p>
+			<p>So far, much of the work we've done has been on the reasearch side of things. We recently found a very informational paper [1] that explains how to go about implementing a basic Navier-Stokes solver for fluid flow modeling that we hope to integrate into our particle-based simulation. We've also slightly pivoted when it comes to the platform our program will be built on. In the proposal, we stated that we would try to build our application in a game engine to take advantage of the comforts and conveniences engine development provides. Since then, however, we have shifted towards an OpenGL-based approach. We began by forking a repository that already contained some basic boilerplate code for things like window creation and input handling. We also brought the CGL library from past assignments into our codebase to take advantage of the vector and matrix operations we've become so familiar with. From there, we implemented the bounding box/cube in which our fluid will be simulated along with input handling code that allows the user to rotate the volume around the origin. We plan to integrate more interactivity as development continues, including UI elements that allow the user to control things like the dimensions of the bounding box, number of particles, viscosity of the fluid, etc.</p>
+			<p>To take our simulation from a bunch of particles to something resembling a continuous, flowing fluid, we will use marching cubes to create a polygonal mesh by stepping through a 3D grid of space defined by the bounding box. Once a mesh has been extracted from our particles, we will use shaders to help sell the appearance of the fluid. Our code is already well equipped to handle a simulation workflow, with a render/draw loop allowing for use to recalculate particle positions/velocities/pressures every frame. We've also begun defining core classes like <code>container</code> and <code>particle</code> that will be the basis of our application from here on out.</p>
+			<p>Unfortunately, due to time constraints from HW3, we have not been able to accomplish as much as we originally set out to do by now, but we are confident in our ability to make quick progress now that we can focus on the project over the coming days/week.</p>
+
 			<h2>Updated Work Plan</h2>
+			<h4>Rest of this week</h4>
+			Implement particles, basic physics into simulation (i.e. gravity, collisions)
+			Integrate UI elements utilizing the ImGui library
+			Make progress on Navier-Stokes solver
+			<h4>This weekend</h4>
+			Complete Navier Stokes solver
+			Implement mesh generation
+			<h4>Next week</h4>
+			Write fluid shader
+
+			[1] <a href="https://dl.acm.org/doi/pdf/10.1145/311535.311548">Stable Fluids</a>
 
 			<h2>Links</h2>
 			<ul>
 				<li><a href="https://drive.google.com/file/d/1lh-5qk3FSRAwCB9QqNYEsnaooovpjxx9/view?usp=drive_link">Video</a></li>
-				<li><a href="https://docs.google.com/presentation/d/1Q8veoDZBW8mso-vR1HBiP23bAaAtaKZ7CVmwJ_3s7dA/edit?slide=id.p#slide=id.p">Slides</a></li>
+				<li><a href="https://docs.google.com/presentation/d/1Q8veoDZBW8mso-vR1HBiP23bAaAtaKZ7CVmwJ_3s7dA/edit?slide=id.p#slide=id.p">Presentation Slides</a></li>
 
 			</ul>
 		</div>
